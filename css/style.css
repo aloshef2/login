@@ -1,0 +1,206 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body,
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+	background: #333;
+}
+.mid{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.card{
+	min-width: 320px;
+	width: 400px;
+	height: 400px;
+	-webkit-transform: rotateY(0);
+		-ms-transform: rotateY(0);
+		-o-transform: rotateY(0);
+		transform: rotateY(0);	
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	transition: .5s;
+	margin: 15px auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.font,
+.back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	backface-visibility: hidden;
+	
+	transition: transform .5s linear;
+
+}
+.card.active{
+	transform: rotateY(180deg);
+}
+.front{
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform: perspective(600px) rotateY(0deg);
+	backface-visibility: hidden;
+}
+.back{
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transform: perspective(600px) rotateY(180deg);
+}
+form{
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3));
+	flex-direction: column;
+	border-radius: 20px;
+	padding: 40px;
+	
+}
+.gradient{
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(-45deg,#999,30 #333, #fff,32 #333, #999);
+	-webkit-background-size: 100% 200%;
+	background-size: 100% 200%;
+	position: relative;
+	animation: backgroundaotline 50s infinite;
+}
+@-webkit-keyframes backgroundaotline {
+	0% {
+	
+	}
+	100% {  }
+}
+@-o-keyframes backgroundaotline {
+	0% {
+	
+	}
+	100% {  }
+}
+@-moz-keyframes backgroundaotline {
+	0% 
+	
+	}
+	100% {  }
+}
+@keyframes backgroundaotline {
+	0% {
+	
+	}
+	100% {  }
+}
+
+
+.card .front input,
+.card .front button,
+.link{
+	width: 100%;
+	height: 40px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: none;
+	background: none;
+	padding-bottom: 5px;
+	border-bottom: 2px solid #999;
+	margin: 10px;
+}
+.card .back input,
+.card .back button,
+.link{
+	width: 100%;
+	height: 40px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: none;
+	background: none;
+	border-bottom: 2px solid #999;
+	padding-bottom: 5px;
+	margin: 10px;
+}
+.link{
+	text-align: center;
+	padding: 5px;
+}
+.back .link a,
+.front .link a{
+	text-decoration: none;
+	color: #999;
+	font-size: 1.3rem;
+}
+.back .link:hover ,
+.front .link:hover{
+	background-color: #999;
+	font-size: 1.3rem;
+}
+.back .link:hover > a,
+.front .link:hover > a{
+	color: #333;
+}
+.card .front div,
+.card .back div{
+	position: relative;
+}
+.front div label,
+.back div label{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	color: #999;
+	font-size: 1.3rem;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+	pointer-events: none;
+}
+input:valid{
+	background: none;
+}
+.front input:valid ~ label,
+.back input:valid ~ label,
+.front input:focus ~ label,
+.back input:focus ~ label{
+	top: -5px;
+	left: 0;
+	font-size: 1.2rem;
+}
+.front button,
+.back button{
+	color: #999;
+	font-size: 1.3rem;
+}
+.front button:hover,
+.back button:hover
+ {
+	color: #333;
+	background-color: #999;
+	font-size: 1.3rem;
+}
